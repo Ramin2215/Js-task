@@ -1,0 +1,34 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.conta{
+    @include flexJustify;
+    input{
+        border: 2px solid blue;
+        border-radius: 10px;
+        outline: none;
+        transition: 1s all;
+        padding: 2px 4px;
+        &:hover{
+            border:2px solid rgb(219, 197, 1);
+        }
+    }
+    .conta__life{
+        .conta__life--three{
+            color:$colorRed;
+            font-weight: 700;
+        }
+    }
+    h1{
+        font-size: 20px;
+        width: 70vw;
+        text-align: center;
+    }
+}

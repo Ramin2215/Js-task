@@ -1,0 +1,8 @@
+@mixin flexJustify($flex:column,$gap:10px){
+    display: flex;
+    flex-direction:$flex ;
+    gap: $gap;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
