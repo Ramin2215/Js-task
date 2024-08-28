@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+$color-palette: (
+  'primary': $primary-color,
+  'secondary': $secondary-color,
+  'tertiary': $tertiary-color,
+  'background': $background-color,
+  'text': $text-color,
+  'muted-text': $muted-text-color,
+);
+
+$color2:(
+    'red':red
+);
+
+@each $key, $value in $color-palette{
+    .text-#{$key}{
+        color: $value;
+    }
+    .bg-#{$key}{
+        background-color: $value;
+    }
+
+    .btn-#{$key}{
+        background-color: $value;
+        border:none;
+        color:$primary-color;
+    }
+}
+

@@ -169,7 +169,7 @@ bodyMassIndex(73, 180);
 /* 1 den 10 kimi reqem yaza bilersiz 3 defe sansiniz var
 proqram duz tapmaqda size komeklik edecek
 */
-const lifeSpan = document.querySelector(".conta__life--three");
+const lifeSpan = document?.querySelector(".conta__life--three");
 
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 let life = 3;
@@ -216,7 +216,7 @@ for (let i = 0; i < myArray.length; i++) {
     let count = 0;
     for (let j = 0; j < myArray.length; j++) {
         if (myArray[i] === myArray[j]) {
-           count++;
+            count++;
         }
     }
     let success = false;
@@ -226,13 +226,53 @@ for (let i = 0; i < myArray.length; i++) {
             break
         }
     }
-    if (!success) { 
+    if (!success) {
         eyniOlanlar.push({ element: myArray[i], count: count });
     }
-    
+
 }
 for (let i = 0; i < eyniOlanlar.length; i++) {
     console.log(`${eyniOlanlar[i].element} -> ${eyniOlanlar[i].count} ədəd`);
 }
 
+
+
+/* task 2 */
+
+function arraysAreEqual(firstArr, secondArr) {
+  
+    if (firstArr.length !== secondArr.length) {
+        return false;
+    }
+    function manualSort(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+               
+                if (String(arr[i]) > String(arr[j])) {
+                 
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    manualSort(firstArr);
+    manualSort(secondArr);
+
+    for (let i = 0; i < firstArr.length; i++) {
+        if (firstArr[i] !== secondArr[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+console.log(arraysAreEqual([1, 2, 3], [1, 2, 3])); // true
+console.log(arraysAreEqual([1, 2, 3], [3, 2, 1])); // true
+console.log(arraysAreEqual([1, 2], [1, 2, 2])); // false
+console.log(arraysAreEqual(["salam", 2], ["salam", "2"])); // false
+console.log(arraysAreEqual([1, 4, "at"], ["at", 1, 4])); // true
+console.log(arraysAreEqual(["At", 1], [1, "aT"])); // false
 
