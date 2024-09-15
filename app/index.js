@@ -659,3 +659,26 @@ function numberGuessingGame() {
 }
 
 numberGuessingGame()
+
+
+//bubble sort
+function mergeAndSort(arrays) {
+    let mergedArray  = arrays.flat();
+    for (let i = 0; i < mergedArray.length; i++) {
+      for (let j = 0; j < mergedArray.length - i - 1; j++) {
+        if (mergedArray[j] > mergedArray[j + 1]) {
+
+          let temp = mergedArray[j];
+          mergedArray[j] = mergedArray[j + 1];
+          mergedArray[j + 1] = temp;
+        }
+      }
+    }
+  
+    return mergedArray;
+  }
+  
+  const arrays = [[1, 5, 9], [2, 6], [3, 4, 7, 8]];
+  const result = mergeAndSort(arrays);
+  console.log(result);  
+  
