@@ -284,24 +284,24 @@ const arrayNum2 = [1, 6, 0, 5, 3, 8, 16];
 
 function bigNum(num) {
 
-    for (let i = 0; i < num.length -1 ; i++) {
-       
-        
-        for (let j = i; j < num.length ; j++) {
-           
-           
-            if(num[i] > num[j]) {
+    for (let i = 0; i < num.length - 1; i++) {
+
+
+        for (let j = i; j < num.length; j++) {
+
+
+            if (num[i] > num[j]) {
                 let temp = num[i];
                 num[i] = num[j];
                 num[j] = temp;
             }
-            
+
         }
-        
+
     }
 
-  return num
-    
+    return num
+
 
 }
 
@@ -663,22 +663,34 @@ numberGuessingGame()
 
 //bubble sort
 function mergeAndSort(arrays) {
-    let mergedArray  = arrays.flat();
+    let mergedArray = arrays.flat();
     for (let i = 0; i < mergedArray.length; i++) {
-      for (let j = 0; j < mergedArray.length - i - 1; j++) {
-        if (mergedArray[j] > mergedArray[j + 1]) {
+        for (let j = 0; j < mergedArray.length - i - 1; j++) {
+            if (mergedArray[j] > mergedArray[j + 1]) {
 
-          let temp = mergedArray[j];
-          mergedArray[j] = mergedArray[j + 1];
-          mergedArray[j + 1] = temp;
+                let temp = mergedArray[j];
+                mergedArray[j] = mergedArray[j + 1];
+                mergedArray[j + 1] = temp;
+            }
         }
-      }
     }
-  
+
     return mergedArray;
-  }
+}
+
+const arrays = [[1, 5, 9], [2, 6], [3, 4, 7, 8]];
+const result = mergeAndSort(arrays);
+console.log(result);
+
+
   
-  const arrays = [[1, 5, 9], [2, 6], [3, 4, 7, 8]];
-  const result = mergeAndSort(arrays);
-  console.log(result);  
-  
+function myFunc(array, number) {
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] + array[i - 1] === number) {
+            return true
+        }
+    }
+    return false
+}
+console.log(myFunc([2, 3, 10, 7, 2], 2) ,"array === num");
