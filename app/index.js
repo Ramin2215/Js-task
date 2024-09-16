@@ -682,6 +682,27 @@ const arrays = [[1, 5, 9], [2, 6], [3, 4, 7, 8]];
 const result = mergeAndSort(arrays);
 console.log(result);
 
+let bubbleSort = ["b", "a", "x", "c", "d"];
+
+
+function bubbleString(array) {
+
+
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i] > array[i + 1]) {
+            let x = array[i];
+            array[i] = array[i + 1]
+            array[i + 1] = x
+        }
+
+    }
+
+    return array
+
+
+}
+console.log(bubbleString(bubbleSort), "bubbleArray");
 
   
 function myFunc(array, number) {
